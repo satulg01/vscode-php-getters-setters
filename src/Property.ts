@@ -172,7 +172,7 @@ export default class Property {
     }
 
     getterDescription() : string {
-        return this.generateMethodDescription('Get ');
+        return this.generateMethodDescription('get_ ');
     }
 
     getterName() : string {
@@ -196,7 +196,7 @@ export default class Property {
     }
 
     setterDescription() : string {
-        return this.generateMethodDescription('Set ');
+        return this.generateMethodDescription('set_ ');
     }
 
     setterName() : string {

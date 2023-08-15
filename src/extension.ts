@@ -241,8 +241,10 @@ class Resolver {
 
         return (preSetter
             + tab + `public function ` + prop.setterName() + `(` + (typeHint ? this.getSetterTypeHint(typeHint, nullable) + ` ` : ``) + `$` + name + `)` + this.getReturnTypeHint('self') + `\n`
-            + tab+ `{\n`
-            + tab + tab + `$this->` + name + ` = $` + name + `;\n`
+            + tab + `{\n`
+            + tab + `$pParam = (empty($${name}) ? "" : trim($${name}))`
+            + tab + `\n`
+            + tab + tab + `$this->` + name + ` = $pParam;\n`
             + `\n`
             + tab + tab + `return $this;\n`
             + tab + `}\n`);
