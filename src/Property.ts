@@ -154,9 +154,9 @@ export default class Property {
 
     generateMethodName(prefix : string) : string {
         const name = this.name.split('_')
-            .map(str => str.charAt(0) + '_' + str.slice(1))
+            .map(str => str.charAt(0) + str.slice(1))
             .join('');
-        return prefix + name;
+        return prefix + '_' + name;
     }
 
     getDescription() : null|string {
