@@ -149,12 +149,12 @@ export default class Property {
             return prefix + this.description.charAt(0).toLowerCase() + this.description.substring(1);
         }
 
-        return prefix + `the value of ` + this.name;
+        return prefix + `o valor de ` + this.name;
     }
 
     generateMethodName(prefix : string) : string {
         const name = this.name.split('_')
-            .map(str => str.charAt(0).toLocaleUpperCase() + str.slice(1))
+            .map(str => str.charAt(0) + '_' + str.slice(1))
             .join('');
         return prefix + name;
     }
@@ -172,7 +172,7 @@ export default class Property {
     }
 
     getterDescription() : string {
-        return this.generateMethodDescription('get_ ');
+        return this.generateMethodDescription('Get ');
     }
 
     getterName() : string {
@@ -196,7 +196,7 @@ export default class Property {
     }
 
     setterDescription() : string {
-        return this.generateMethodDescription('set_ ');
+        return this.generateMethodDescription('Set ');
     }
 
     setterName() : string {
